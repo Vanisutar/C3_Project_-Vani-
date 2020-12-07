@@ -70,6 +70,11 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
-
+    @Test
+    public void calculating_the_total_Price_of_the_items_selected_from_the_menu(){
+        restaurant.addToMenu("Fried Rice", 100);
+        int sum = restaurant.totalcost("Sweet corn soup","Vegetable lasagne","Fried Rice");
+        assertEquals(sum,488);
+    }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
